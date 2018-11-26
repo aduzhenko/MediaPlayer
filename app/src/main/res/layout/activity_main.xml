@@ -4,11 +4,21 @@
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
+	android:orientation="vertical"
 	tools:context=".MainActivity">
 
 	<Button
+		android:id="@+id/play_button"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:text=""/>
+		android:text="Play"
+		android:layout_margin="8dp"/>
+
+	<Button
+		android:id="@+id/pause_button"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:text="Pause"
+		android:layout_margin="8dp"/>
 
 </LinearLayout>
