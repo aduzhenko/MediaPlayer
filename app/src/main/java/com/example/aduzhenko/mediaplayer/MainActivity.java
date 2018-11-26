@@ -1,6 +1,5 @@
 package com.example.aduzhenko.mediaplayer;
 
-import android.content.DialogInterface;
 import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
