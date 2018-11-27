@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import java.io.IOException;
+
 public class MainActivity extends AppCompatActivity {
 
 	private MediaPlayer mPlayer;
@@ -31,9 +33,14 @@ public class MainActivity extends AppCompatActivity {
 
 			if (mPlayer.isPlaying()) {
 				mPlayer.reset();
-			} else {
-				mPlayer.start();
+				try {
+					mPlayer.prepare();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
 			}
+
+			mPlayer.start();
 		}
 	};
 
