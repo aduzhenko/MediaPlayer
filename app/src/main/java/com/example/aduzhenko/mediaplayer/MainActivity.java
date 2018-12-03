@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import java.io.IOException;
 
@@ -30,17 +31,15 @@ public class MainActivity extends AppCompatActivity {
 
 		@Override
 		public void onClick(View v) {
-
-			if (mPlayer.isPlaying()) {
-				mPlayer.reset();
-				try {
-					mPlayer.prepare();
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
+		mPlayer.start();
+		mPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+			@Override
+			public void onCompletion(MediaPlayer mp) {
+				Toast theToast = Toast.makeText(MainActivity.this,
+						"I'm done", Toast.LENGTH_SHORT);
+				theToast.show();
 			}
-
-			mPlayer.start();
+		});
 		}
 	};
 
